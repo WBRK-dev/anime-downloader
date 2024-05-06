@@ -1,0 +1,69 @@
+main #animesearch #search {
+    display: flex; gap: .5rem;
+    flex-direction: column;
+    padding: .5rem;
+}
+
+main #animesearch .animegrid {
+    display: grid; gap: .5rem;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+main #animesearch .animecard {
+    display: flex; gap: .5rem;
+    flex-direction: column;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    text-align: unset;
+}
+
+main #animesearch .animecard img {
+    display: block;
+    aspect-ratio: 1/1.35;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+main #animesearch .animecard .title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+main #animesearch #episodes-wrapper .backbutton {
+    border: none;
+    border-bottom: 1px solid var(--w-border);
+    border-radius: 0;
+
+    display: flex; gap: 1rem;
+    align-items: center;
+
+    background-color: transparent;
+
+    font-size: 18px;
+    padding: .5rem 1rem;
+
+    cursor: pointer;
+}
+main #animesearch #episodes-wrapper .backbutton:hover {background-color: rgba(var(--w-body-tertiary-rgb), .5);}
+main #animesearch #episodes-wrapper .backbutton[disabled] {color: var(--w-body-secondary-color) !important; cursor: not-allowed;}
+
+main #animesearch #episodes-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main #animesearch #episodes #episode-list {
+    display: grid; gap: .5rem;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+}
+
+main #animesearch #episodes #episode-list > * {
+    border: none;
+    border-radius: .25rem;
+    background-color: var(--w-body-tertiary-bg);
+    padding: .25rem 0;
+}
+main #animesearch #episodes #episode-list > *.active {background-color: var(--w-body-secondary-bg);}

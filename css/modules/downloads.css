@@ -1,0 +1,20 @@
+main #downloads {
+    border-right: 1px solid var(--w-border);
+    height: 100%;
+
+    position: relative;
+}
+
+main #downloads #download-list > * {
+    display: flex; gap: .5rem;
+    flex-direction: column;
+
+    padding: .5rem;
+}
+main #downloads #download-list > *:not(:last-child) {border-bottom: 1px solid var(--w-border);}
+
+main #downloads #download-list > * #info {
+    display: flex;
+    justify-content: space-between;
+}
+main #downloads #download-list > * #info p:first-of-type {font-weight: 700;}

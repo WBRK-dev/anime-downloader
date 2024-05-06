@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/res/wbrk.css/v2/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/ffmpeg/ffmpeg.js"></script>
+    <script src="js/ffmpeg-util/index.js"></script>
+    <script src="js/m3u8-parser/index.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/downloadHandler.js"></script>
+    <script src="js/download.js"></script>
+    <script src="js/animesearch.js"></script>
+    <title>Anime Downloader</title>
+</head>
+<body>
+    <nav class="navbar">
+        <p class="logo">Anime Downloader</p>
+    </nav>
+    <div class="widthlimiter"><div class="widthlimited" style="--width: 1920px;">
+
+        <main>
+
+
+            <div id="downloads">
+
+                <div id="overview">
+
+                    <div class="p-2 border-bottom"><div class="w-progressbar" style="--width: 0%;" id="main"><p class="w-progressbar-text-center">0%</p></div></div>
+
+                    <div id="download-list"></div>
+
+                </div>
+
+            </div>
+
+
+            <div id="animesearch">
+                <div id="search">
+                    <input type="text" placeholder="Search..." class="input-text" onkeydown="searchWithTimeout()" onkeyup="searchWithTimeout()">
+                    <div class="animegrid"></div>
+                </div>
+                <div id="episodes-wrapper" style="display: none; position: relative;">
+                    <button class="backbutton" onclick="backToSearch()"><i class="fi fi-sr-arrow-left"></i><p>Back to search</p></button>
+                    <div id="episodes">
+                        <div class="d-flex gap-2 p-2 border-bottom" id="info">
+                            <img src="" style="height: 150px; border-radius: .5rem;">
+                            <div>
+                                <p class="fw-bold fs-6" id="title">Title</p>
+                                <p>SUB: <span id="sub">0</span> - DUB: <span id="dub">0</span></p>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-2 p-2">
+                            <div class="d-flex gap-2">
+                                <input id="start" type="text" class="input-text flex-grow-1" placeholder="Start" onkeyup="checkInputOnDigits(this)" onblur="checkInputOnDigits(this)">
+                                <input id="end" type="text" class="input-text flex-grow-1" placeholder="End" onkeyup="checkInputOnDigits(this)" onblur="checkInputOnDigits(this)">
+                            </div>
+                            <div id="episode-list"></div>
+                        </div>
+                    </div>
+                    <div class="p-2 border-top mt-auto position-sticky bottom-0 bg-body-tertiary">
+                        <button class="btn btn-primary w-100" id="downloadbtn" onclick="makeDownloadReady()">Download <span id="amount">0</span></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div></div>
+</body>
+</html>

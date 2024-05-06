@@ -1,0 +1,42 @@
+@import url("modules/downloads.css");
+@import url("modules/animesearch.css");
+
+body {
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+body > .widthlimiter {flex-grow: 1;}
+
+.navbar {flex-shrink: 0;}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 60px);
+    height: calc(100dvh - 60px);
+}
+
+main > * {overflow: auto;}
+
+
+.popups {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    background-color: #00000070;
+}
+
+.popups .popup {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: var(--w-body-tertiary-bg);
+    border-radius: .5rem;
+    padding: .5rem;
+}
